@@ -1,0 +1,38 @@
+{
+  "name": "@mojaloop/forensic-logging-client",
+  "version": "0.4.0",
+  "description": "Client for connecting to forensic-logging-sidecar",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojaloop/forensic-logging-client.git"
+  },
+  "keywords": [
+    "forensic",
+    "logging",
+    "client"
+  ],
+  "scripts": {
+    "pretest": "standard",
+    "test": "npm run test:unit | faucet",
+    "test:unit": "tape 'test/unit/**/*.test.js'",
+    "test:xunit": "tape 'test/unit/**/*.test.js' | tap-xunit",
+    "test:coverage": "istanbul cover tape -- 'test/unit/**/*.test.js'",
+    "test:coverage-check": "npm run test:coverage && istanbul check-coverage"
+  },
+  "dependencies": {
+    "@mojaloop/central-services-shared": "0.3.0",
+    "bluebird": "3.5.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "istanbul": "0.4.5",
+    "pre-commit": "1.2.2",
+    "standard": "9.0.2",
+    "sinon": "2.1.0",
+    "tap-xunit": "1.7.0",
+    "tape": "4.6.3",
+    "tapes": "4.1.0"
+  }
+}
