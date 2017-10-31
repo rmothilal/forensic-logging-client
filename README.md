@@ -2,8 +2,8 @@
 A client library used to connect to the forensic-logging-sidecar
 
 ## Installation
-You must have setup connection to the @@mojaloop npm repo on JFrog in order to install.
-`npm install @@mojaloop/forensic-logging-client`
+You must have setup connection to the @mojaloop npm repo on JFrog in order to install.
+`npm install @mojaloop/forensic-logging-client`
 
 ## Usage
 To use the forensic logging client, you only need to require it in the file where you want to use the sidecar.
@@ -11,7 +11,7 @@ To use the forensic logging client, you only need to require it in the file wher
 ```
 'use strict'
 
-const Client = require('@@mojaloop/forensic-logging-client')
+const Client = require('@mojaloop/forensic-logging-client')
 
 function connectAndWrite(message) {
   const sidecar = Client.create({
