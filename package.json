@@ -34,5 +34,8 @@
     "tap-xunit": "1.7.0",
     "tape": "4.6.3",
     "tapes": "4.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
