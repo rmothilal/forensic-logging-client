@@ -41,7 +41,7 @@ Test('SidecarClient', sidecarClientTest => {
 
   sidecarClientTest.test('create should', createTest => {
     createTest.test('create new connection and set properties', test => {
-      let settings = { host: 'test.com', port: 1234, connectTimeout: 9000, reconnectInterval: 2000 }
+      let settings = {host: 'test.com', port: 1234, connectTimeout: 9000, reconnectInterval: 2000}
       let conn = SidecarClient.create(settings)
 
       test.equal(conn._host, settings.host)
@@ -68,7 +68,7 @@ Test('SidecarClient', sidecarClientTest => {
     connectTest.test('create socket connection and resolve when open', test => {
       let service = 'test'
 
-      let settings = { port: 1234, host: 'local' }
+      let settings = {port: 1234, host: 'local'}
       let client = SidecarClient.create(settings)
 
       let socketEmitter = new EventEmitter()
@@ -107,7 +107,7 @@ Test('SidecarClient', sidecarClientTest => {
     })
 
     connectTest.test('reject if connect timeout reached', test => {
-      let settings = { port: 1234, host: 'local', connectTimeout: 5000 }
+      let settings = {port: 1234, host: 'local', connectTimeout: 5000}
       let client = SidecarClient.create(settings)
 
       let socketEmitter = new EventEmitter()
@@ -144,7 +144,7 @@ Test('SidecarClient', sidecarClientTest => {
     connectTest.test('reconnect if ECONNREFUSED error', test => {
       let service = 'test'
 
-      let settings = { port: 1234, host: 'local', connectTimeout: 9000, reconnectInterval: 1000 }
+      let settings = {port: 1234, host: 'local', connectTimeout: 9000, reconnectInterval: 1000}
       let client = SidecarClient.create(settings)
 
       let socketEmitter = new EventEmitter()
@@ -187,7 +187,7 @@ Test('SidecarClient', sidecarClientTest => {
     })
 
     connectTest.test('reject if error event emitted', test => {
-      let settings = { port: 1234, host: 'local' }
+      let settings = {port: 1234, host: 'local'}
       let client = SidecarClient.create(settings)
 
       let socketEmitter = new EventEmitter()
@@ -240,7 +240,7 @@ Test('SidecarClient', sidecarClientTest => {
     writeTest.test('frame message with length and write to socket', test => {
       let client = SidecarClient.create()
       client._connected = true
-      client._socket = { write: sandbox.stub() }
+      client._socket = {write: sandbox.stub()}
 
       let message = 'This is a test message'
       let buffer = writeMessageToBuffer(message)
@@ -253,7 +253,7 @@ Test('SidecarClient', sidecarClientTest => {
     writeTest.test('not convert Buffer before writing', test => {
       let client = SidecarClient.create()
       client._connected = true
-      client._socket = { write: sandbox.stub() }
+      client._socket = {write: sandbox.stub()}
 
       let message = 'This is a test message'
       let buffer = writeMessageToBuffer(message)
