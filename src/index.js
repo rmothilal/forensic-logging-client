@@ -26,7 +26,7 @@ class Sidecar extends EventEmitter {
         return resolve(this)
       }
 
-      this._connectPromise = { resolve, reject }
+      this._connectPromise = {resolve, reject}
 
       this._connectTimer = setTimeout(this._connectTimedOut.bind(this), this._connectTimeout)
 
@@ -88,7 +88,7 @@ class Sidecar extends EventEmitter {
 
     this._socket.once('error', connectErrorListener)
 
-    this._socket.connect({ port: this._port, host: this._host })
+    this._socket.connect({port: this._port, host: this._host})
   }
 
   _connectTimedOut () {
